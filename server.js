@@ -16,7 +16,7 @@ const PORT = process.env.PORT || 10000; // Render utilise généralement 10000 p
 app.use(express.static(path.join(__dirname, 'dist')));
 
 // Pour toutes les autres routes, servir le fichier index.html (pour le routing client-side de Vue)
-app.get('*', (req, res) => {
+app.get('/*splat', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
